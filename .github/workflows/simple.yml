@@ -5,6 +5,7 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on:  ubuntu-18.04
+    # need: ['command-sebelumnya']
     steps:
       - name: echo a string
         run: echo "Hello World"
