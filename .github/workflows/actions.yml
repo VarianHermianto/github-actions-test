@@ -9,14 +9,18 @@ name: Actions Workflow
       # types: [opened, synchronize, reopened, assigned, closed]
 
 on: 
-  schedule:
-    - cron: "0/5 * * * *"
+  # schedule:
+    # - cron: "0/5 * * * *"
+  push:
+    branches:
+      - master
   pull_request:
       types: [opened, synchronize]
 
 jobs:
   run-github-actions:
     runs-on:  ubuntu-18.04
+    # need: ['nama-jobs-sebelumnya']
     steps:
       - name: list files
         run: |
