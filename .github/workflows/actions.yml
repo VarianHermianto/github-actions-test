@@ -17,6 +17,9 @@ on:
   pull_request:
       types: [opened, synchronize]
 
+env:
+  WF_ENV: ${{ secrets.WF_ENV }}
+
 jobs:
   run-github-actions:
     runs-on:  ubuntu-18.04
