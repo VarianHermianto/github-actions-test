@@ -17,9 +17,6 @@ on:
   pull_request:
       types: [opened, synchronize]
 
-env:
-  WF_ENV: Available to all jobs
-
 jobs:
   run-shell-command:
     runs-on:  ubuntu-18.04

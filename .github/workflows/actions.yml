@@ -17,23 +17,11 @@ on:
   pull_request:
       types: [opened, synchronize]
 
-env:
-  WF_ENV: ${{ secrets.WF_ENV }}
-
 jobs:
   run-github-actions:
     runs-on:  ubuntu-18.04
     # need: ['nama-jobs-sebelumnya']
-    env:
-      JOB_ENV: Available to all steps in this run-github-actions job
     steps:
-      - name: log ENV variables
-        env:
-          STEP_ENV: Available to only this step 
-        run: |
-          echo "WF_ENV: ${WF_ENV}"
-          echo "JOB_ENV: ${JOB_ENV}"
-          echo "STEP_ENV: ${STEP_ENV}"
       - name: list files
         run: |
           pwd
