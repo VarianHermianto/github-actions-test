@@ -9,15 +9,18 @@ name: Shell Commands
       # types: [opened, synchronize, reopened, assigned, closed]
 
 on: 
-  schedule:
-    - cron: "0/5 * * * *"
+  # schedule:
+    # - cron: "0/5 * * * *"
+  push:
+    branches:
+      - master
   pull_request:
       types: [opened, synchronize]
 
 jobs:
   run-shell-command:
     runs-on:  ubuntu-18.04
-    # need: ['command-sebelumnya']
+    # need: ['nama-jobs-sebelumnya']
     steps:
       - name: echo a string
         run: echo "Hello World"
